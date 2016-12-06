@@ -1,11 +1,11 @@
 var http = require('http');
 var express = require('express');
-//var bodyP = require('body-parser');
+var bodyP = require('body-parser');
 
 var app = express();
 
-//app.use(bodyP.json());
-//app.use(bodyP.urlencoded({ extended: false }));
+app.use(bodyP.json());
+app.use(bodyP.urlencoded({ extended: false }));
 
 app.set('port', process.env.PORT || 3000);
 
