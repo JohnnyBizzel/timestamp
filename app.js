@@ -41,7 +41,7 @@ app.get('/', function(req, res) {
     res.end('Hi!! - to get the timestamp put a date as the 1st query string argument');
 });
 
-app.listen(3001, function() {
+app.listen(app.get('port'), function() {
     console.log('Express started on http://localhost:' +
         app.get('port') + '; press Ctrl-C to terminate');
 });
