@@ -10,9 +10,10 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 
 app.get('/:date', function(req, res) {
-        var date = req.params.date;
-        console.log(date);
-     res.end('Got date');
+        var dateValue = req.params.date;
+        dateValue = dateValue.match(/[a-zA-Z]+|[0-9]+/g).join(" ");
+        var dt = Date.parse(dateValue);
+     res.end(JSON.stringify(dt));
 });
 
 app.get('/', function(req, res) {
@@ -23,7 +24,7 @@ app.get('/', function(req, res) {
 		res.end('Hi!! - to get the timestamp put a date as the 1st query string argument');
 	} else {
 	 res.end('Hi!! - to get the timestamp put a date as the 1st query string argument');
-	} 
+	}
 });
 
 app.listen(3000, function(){  console.log('Express started on http://localhost:' +
