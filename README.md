@@ -1,2 +1,2 @@
 # timestamp
-JB was here
+Free Code Camp Node JS challenge to provide a timestamp object for a passed date.
